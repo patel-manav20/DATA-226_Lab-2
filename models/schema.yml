@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_stock_prices
+    description: "Staging (ephemeral) model on top of RAW.STOCK_PRICES from Lab 1"
+    columns:
+      - name: symbol
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: trade_date
+        description: "Trading date"
+        tests:
+          - not_null
+
+  - name: stock_features
+    description: "Final analytics table with derived features from daily stock prices"
+    columns:
+      - name: symbol
+        description: "Stock ticker symbol"
+        tests:
+          - not_null
+      - name: trade_date
+        description: "Trading date"
+        tests:
+          - not_null
+      - name: symbol_trade_date_key
+        description: "Surrogate key for (symbol, trade_date)"
+        tests:
+          - not_null
+          - unique
+      - name: daily_return
+        description: "Day-over-day return of the closing price"
+      - name: ma_7_close
+        description: "7-day moving average of close_price"
+      - name: ma_7_volume
+        description: "7-day moving average of volume"
+      - name: updated_at
+        description: "Timestamp when this record was last updated in dbt run"

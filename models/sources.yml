@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw schema for Lab 1 stock prices loaded by Airflow"
+    database: "{{ env_var('DBT_DATABASE') }}"
+    schema: raw
+    tables:
+      - name: stock_prices
+        identifier: STOCK_PRICES
+        description: "Raw OHLCV stock prices from yfinance"
+        columns:
+          - name: SYMBOL
+            description: "Ticker symbol"
+          - name: DATE
+            description: "Trading date"
+          - name: OPEN
+          - name: HIGH
+          - name: LOW
+          - name: CLOSE
+          - name: VOLUME

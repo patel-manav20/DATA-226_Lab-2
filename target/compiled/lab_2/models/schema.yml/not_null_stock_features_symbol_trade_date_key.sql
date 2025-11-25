@@ -1,0 +1,5 @@
+select symbol_trade_date_key
+from USER_DB_HYENA.analytics_analytics.stock_features
+where symbol_trade_date_key is null
+
+

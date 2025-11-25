@@ -1,0 +1,25 @@
+[2025-11-25T05:14:30.358+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-11-25T05:14:30.370+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_cloud_stock_pipeline.run_dbt_cloud_job manual__2025-11-25T05:09:28.505022+00:00 [queued]>
+[2025-11-25T05:14:30.375+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_cloud_stock_pipeline.run_dbt_cloud_job manual__2025-11-25T05:09:28.505022+00:00 [queued]>
+[2025-11-25T05:14:30.375+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 2
+[2025-11-25T05:14:30.382+0000] {taskinstance.py:2888} INFO - Executing <Task(DbtCloudRunJobOperator): run_dbt_cloud_job> on 2025-11-25 05:09:28.505022+00:00
+[2025-11-25T05:14:30.387+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dbt_cloud_stock_pipeline', 'run_dbt_cloud_job', 'manual__2025-11-25T05:09:28.505022+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dbt_cloud_stock_pipeline.py', '--cfg-path', '/tmp/tmpkx2_1bzb']
+[2025-11-25T05:14:30.389+0000] {standard_task_runner.py:105} INFO - Job 12: Subtask run_dbt_cloud_job
+[2025-11-25T05:14:30.389+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=408) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-25T05:14:30.390+0000] {standard_task_runner.py:72} INFO - Started process 409 to run task
+[2025-11-25T05:14:30.419+0000] {task_command.py:467} INFO - Running <TaskInstance: dbt_cloud_stock_pipeline.run_dbt_cloud_job manual__2025-11-25T05:09:28.505022+00:00 [running]> on host 6aeb1cad2053
+[2025-11-25T05:14:30.463+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_cloud_stock_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_cloud_job' AIRFLOW_CTX_EXECUTION_DATE='2025-11-25T05:09:28.505022+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-25T05:09:28.505022+00:00'
+[2025-11-25T05:14:30.463+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-11-25T05:14:30.477+0000] {connection.py:277} WARNING - Connection schemes (type: dbt_cloud) shall not contain '_' according to RFC3986.
+[2025-11-25T05:14:30.477+0000] {base.py:84} INFO - Retrieving connection 'dbt_conn'
+[2025-11-25T05:14:32.760+0000] {dbt.py:202} INFO - Waiting for job run 70471854795453 to terminate.
+[2025-11-25T05:14:32.761+0000] {dbt.py:772} INFO - Getting the status of job run 70471854795453.
+[2025-11-25T05:14:33.084+0000] {dbt.py:777} INFO - Current status of job run 70471854795453: STARTING
+[2025-11-25T05:15:33.089+0000] {dbt.py:772} INFO - Getting the status of job run 70471854795453.
+[2025-11-25T05:15:34.108+0000] {dbt.py:777} INFO - Current status of job run 70471854795453: SUCCESS
+[2025-11-25T05:15:34.111+0000] {dbt.py:211} INFO - Job run 70471854795453 has completed successfully.
+[2025-11-25T05:15:34.162+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-11-25T05:15:34.163+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dbt_cloud_stock_pipeline, task_id=run_dbt_cloud_job, run_id=manual__2025-11-25T05:09:28.505022+00:00, execution_date=20251125T050928, start_date=20251125T051430, end_date=20251125T051534
+[2025-11-25T05:15:34.207+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-11-25T05:15:34.221+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-25T05:15:34.222+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
